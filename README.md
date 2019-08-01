@@ -2,19 +2,19 @@
 
 template to use for publishing gitbooks to github.com
 
-You can duplicate this repository   
+You can duplicate this repository  
 [https://help.github.com/articles/duplicating-a-repository/](https://help.github.com/articles/duplicating-a-repository/)
 
-1. Create a new repository on github.com  
+1. Create a new repository on github.com
 
-1. Create a bare clone of this repository  
+2. Create a bare clone of this repository  
    `git clone --bare https://github.com/rebeccapeltz/gitbook-publishable-template.git`
 
-2. Mirror-push to new repository  
+3. Mirror-push to new repository  
    `cd gitbook-publishable-template.git`  
    `git push --mirror https://github.com/useraccount/new-repository.git`
 
-3. Remove the temporary repository create above  
+4. Remove the temporary repository create above  
    `cd ..`  
    `rm -rf old-repository.git`
 
@@ -30,14 +30,11 @@ git push origin master
 
 Yay!
 
-
-
-
 ```c++
 int main(){
-cout << "Hello World!" << endl;
+std::cout << "Hello World!" << endl;
 }
 ```
 
-dfgsfg
+
 
