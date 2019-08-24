@@ -17,11 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="tests/two-sum.html" />
+    
     
 
     </head>
@@ -91,6 +93,19 @@
             
                     
                     Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="tests/two-sum.html">
+            
+                <a href="tests/two-sum.html">
+            
+                    
+                    1. Two Sum
             
                 </a>
             
@@ -138,30 +153,25 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="gitboook-publishable-template">gitboook-publishable-template</h1>
 <p>template to use for publishing gitbooks to github.com</p>
-<p>You can duplicate this repository 
-<a href="https://help.github.com/articles/duplicating-a-repository/" target="_blank">https://help.github.com/articles/duplicating-a-repository/</a></p>
+<p>You can duplicate this repository<br><a href="https://help.github.com/articles/duplicating-a-repository/" target="_blank">https://help.github.com/articles/duplicating-a-repository/</a></p>
 <ol>
-<li>Create a new repository on github.com  </li>
-</ol>
-<ol>
-<li><p>Create a bare clone of this repository
-<code>git clone --bare https://github.com/rebeccapeltz/gitbook-publishable-template.git</code></p>
+<li><p>Create a new repository on github.com</p>
 </li>
-<li><p>Mirror-push to new repository
-<code>cd gitbook-publishable-template.git</code><br><code>git push --mirror https://github.com/useraccount/new-repository.git</code>  </p>
+<li><p>Create a bare clone of this repository<br><code>git clone --bare https://github.com/rebeccapeltz/gitbook-publishable-template.git</code></p>
 </li>
-<li><p>Remove the temporary repository create above<br><code>cd ..</code>
-<code>rm -rf old-repository.git</code></p>
+<li><p>Mirror-push to new repository<br><code>cd gitbook-publishable-template.git</code><br><code>git push --mirror https://github.com/useraccount/new-repository.git</code></p>
+</li>
+<li><p>Remove the temporary repository create above<br><code>cd ..</code><br><code>rm -rf old-repository.git</code></p>
 </li>
 </ol>
-<p>Alternatively, you can also just download a zipped file of this repository and then use standard commands to push to initialize and push to your new repository.  </p>
+<p>Alternatively, you can also just download a zipped file of this repository and then use standard commands to push to initialize and push to your new repository.</p>
 <pre><code class="lang-bash">git init
 git add .
 git commit -m<span class="hljs-string">&quot;first commit&quot;</span>
@@ -169,6 +179,10 @@ git remote add origin git@github.com:useraccount/new-repository.git
 git push origin master
 </code></pre>
 <p>Yay!</p>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Hello World!&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -197,6 +211,10 @@ git push origin master
             
                 
                 
+                <a href="tests/two-sum.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 1. Two Sum">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
             
         
     </div>
@@ -204,7 +222,7 @@ git push origin master
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-08-01T18:01:52.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-01T18:05:57.270Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"1. Two Sum","level":"1.2","depth":1,"path":"tests/two-sum.md","ref":"tests/two-sum.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-plus"],"pluginsConfig":{"search-plus":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-08-24T21:33:36.275Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-24T21:38:49.855Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -214,19 +232,11 @@ git push origin master
     <script src="gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
