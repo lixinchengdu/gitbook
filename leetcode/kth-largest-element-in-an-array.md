@@ -78,3 +78,21 @@ public:
     }
 };
 ```
+
+## Proof Sketch
+
+The post loop-invariant is that: 
+1. All elements left to `left` (exclusive) is smaller or equal to `pivotal`.
+2. All elements right to `right` (exclusive) is greater or equal to `pivotal`. 
+
+Therefore, after the crossing of `left` and `right`, all elements right/left to `left`/`right` (inclusive) are greater/smaller or equal to `pivotal`. It is possible that after crossing, `left` and `right` are **NOT** adjacent when both `left` and `right` are pointed to `pivotal` in the last iteration. Therefore, `else {return nums[k];}` is essential when `k` happens to be the `pivotal`.
+
+## Common Pitfalls
+
+1. `while (left < right)`. The loop invariant may not hold any more. For example `[5, 6, 4]`, after first iteration, both `left` and `right` point to the middle element. The while loop exists but `6` is not equal to `pivotal`.  
+
+2. `pivotal` is not equal to any element in the array. In this case, it is possible to result in infinite recursions. To avoid this situation, the next pitfall should also be avoided. 
+
+3. `nums[left] <= pivotal`. In this case, the infinite-recursion happens for some cases like `[2, 1]`. The edge case is evil because swap happens at the boundary which makes no progress. 
+
+If the last two pitfalls are avoided, it is guaranteed that the algorithm would make progress because one non-boundary swap is guaranteed. 
