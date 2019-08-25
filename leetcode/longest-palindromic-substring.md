@@ -83,3 +83,40 @@ public:
     }
 };
 ```
+
+## Optimization
+
+It is possible to refactor the two while loops by define a function `getLen(const string& str, int left, int right)`.
+For odd-length palindrome, initially `left == right`. 
+
+The following code is taken from [Huahua](https://zxi.mytechroad.com/blog/greedy/leetcode-5-longest-palindromic-substring/)
+
+```c++
+// Author: Huahua
+class Solution {
+public:
+  string longestPalindrome(string s) {
+    int best_len = 0;
+    int start = 0;
+    for (int i = 0; i < s.length(); ++i) {
+      int l1 = getLen(s, i, i);
+      int l2 = getLen(s, i, i + 1);
+      int l = max(l1, l2);      
+      if (l > best_len) {
+        best_len = l;
+        start = i - (l - 1) / 2;
+      }
+    }
+    return s.substr(start, best_len);
+  }
+private:
+  int getLen(const string& s, int l, int r) {
+    if (s[l] != s[r]) return 1;    
+    while (l >= 0 && r <= s.length() - 1 && s[l] == s[r]) {
+      --l;
+      ++r;
+    };
+    return r - l - 1;
+  }
+};
+```

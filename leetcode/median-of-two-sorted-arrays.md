@@ -73,3 +73,6 @@ public:
     }
 };
 ```
+
+## Common pitfalls
+It is necessary to understand which is halved for binary search. It is `k`, not indexes. 
