@@ -1,0 +1,40 @@
+# 319. Bulb Switcher
+
+* *Difficulty: Medium*
+
+* *Topics: Math, Brainteaser*
+
+* *Similar Questions:*
+
+  * [Bulb Switcher II](bulb-switcher-ii.md)
+
+  * [Minimum Number of K Consecutive Bit Flips](minimum-number-of-k-consecutive-bit-flips.md)
+
+## Problem:
+
+<p>There are <i>n</i> bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it&#39;s off or turning off if it&#39;s on). For the <i>i</i>-th round, you toggle every <i>i</i> bulb. For the <i>n</i>-th round, you only toggle the last bulb. Find how many bulbs are on after <i>n</i> rounds.</p>
+
+<p><b>Example:</b></p>
+
+<pre>
+<strong>Input: </strong>3
+<strong>Output:</strong> 1 
+<strong>Explanation:</strong> 
+At first, the three bulbs are <b>[off, off, off]</b>.
+After first round, the three bulbs are <b>[on, on, on]</b>.
+After second round, the three bulbs are <b>[on, off, on]</b>.
+After third round, the three bulbs are <b>[on, off, off]</b>. 
+
+So you should return 1, because there is only one bulb is on.
+</pre>
+
+## Solutions:
+
+```c++
+class Solution {
+public:
+    int bulbSwitch(int n) {
+        return sqrt(n);
+    }
+};
+```

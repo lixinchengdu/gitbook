@@ -28,13 +28,3 @@ git remote add origin git@github.com:useraccount/new-repository.git
 git push origin master
 ```
 
-Yay!
-
-```c++
-int main(){
-std::cout << "Hello World!" << endl;
-}
-```
-
-
-

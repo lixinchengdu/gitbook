@@ -1,0 +1,72 @@
+# 21. Merge Two Sorted Lists
+
+* *Difficulty: Easy*
+
+* *Topics: Linked List*
+
+* *Similar Questions:*
+
+  * [Merge k Sorted Lists](merge-k-sorted-lists.md)
+
+  * [Merge Sorted Array](merge-sorted-array.md)
+
+  * [Sort List](sort-list.md)
+
+  * [Shortest Word Distance II](shortest-word-distance-ii.md)
+
+## Problem:
+
+<p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
+
+<p><b>Example:</b>
+<pre>
+<b>Input:</b> 1->2->4, 1->3->4
+<b>Output:</b> 1->1->2->3->4->4
+</pre>
+</p>
+## Solutions:
+
+```c++
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+        ListNode* head = NULL;
+        ListNode** cur = &head;
+        
+        while (l1 != NULL || l2 != NULL) {
+            if (l1 == NULL) {
+                *cur = l2;
+                l2 = l2 -> next;
+            }
+            
+            else if (l2 == NULL) {
+                *cur = l1;
+                l1 = l1 ->next;
+            }
+            
+            else { 
+               if (l1->val < l2->val) {
+                    *cur = l1;
+                    l1 = l1->next;
+                } else {
+                    *cur = l2;
+                    l2 = l2->next;
+                }
+            }
+            
+            cur = &((*cur)->next);
+        }
+        
+        return head;
+        
+    }
+};
+```
