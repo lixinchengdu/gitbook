@@ -1,5 +1,6 @@
 # Summary
 
+* [Pitfalls](pitfalls.md)
 * [1.Two Sum](./leetcode/two-sum.md)
 * [2.Add Two Numbers](./leetcode/add-two-numbers.md)
 * [3.Longest Substring Without Repeating Characters](./leetcode/longest-substring-without-repeating-characters.md)
