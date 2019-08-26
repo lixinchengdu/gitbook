@@ -71,3 +71,33 @@ public:
     }
 };
 ```
+
+## Another more concise solution
+
+It is possible to aggregate sum and carry. 
+
+From [Huahua](https://zxi.mytechroad.com/blog/string/leetcode-43-multiply-strings/)
+
+```c++
+// Author: Huahua
+// Running time: 4 ms
+class Solution {
+public:
+  string multiply(string num1, string num2) {
+    const int l1 = num1.length();
+    const int l2 = num2.length();
+    string ans(l1 + l2, '0');
+    for (int i = l1 - 1; i >= 0; --i)
+      for (int j = l2 - 1; j >= 0; --j) {
+        int sum = (ans[i + j + 1] - '0') + (num1[i] - '0') * (num2[j] - '0');        
+        ans[i + j + 1] = (sum % 10) + '0';
+        ans[i + j] += sum / 10; // This line is not a problem if the order is from right to left
+      }
+
+    // ans[0] is guaranteed to be less than 10 due to math property
+    for (int i = 0; i < ans.length(); ++i)
+      if (ans[i] != '0' || i == ans.length() - 1) return ans.substr(i);
+    return "";
+  }
+};
+```

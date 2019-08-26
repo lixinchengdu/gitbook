@@ -40,7 +40,8 @@ public:
         int carry = a&b;
         
         while (carry != 0) {
-            carry = (carry & 0x7fffffff)<< 1; // to prevent runtime exception, &0x7fffffff
+            // to prevent runtime exception, &0x7fffffff; This is not necessary for real program. Platforms other than leetcode do not complain. 
+            carry = (carry & 0x7fffffff)<< 1; 
             int newRet = ret^carry;
             int newCarry = ret&carry;
             ret = newRet;
