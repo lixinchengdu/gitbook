@@ -72,3 +72,58 @@ public:
     }
 };
 ```
+
+It is possible to use count sort to reduce the space complexity from `O(nlogn)` to `O(n)`. 
+
+[bucket sort strict O(n) solution](https://leetcode.com/problems/two-sum-less-than-k/discuss/328270/bucket-sort-strict-O(n)-solution)
+
+```c++
+class Solution {
+    
+    class Node {
+        int v;
+        int f;
+        public Node(int v, int f) {
+            this.v =v;
+            this.f = f;
+        }
+        
+        public String toString(){return v +"-" + f;}
+    }
+    public int twoSumLessThanK(int[] A, int k) {
+        if(A == null || A.length < 1) return -1;
+        
+       
+        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+        for(int a : A) {
+            min = Math.min(min, a);
+            max = Math.max(max, a);
+        }
+        
+        Node[] buckets = new Node[max+1];
+        for(int a : A) {
+            if(buckets[a] == null) buckets[a] = new Node(a, 0);
+            buckets[a].f ++;
+        }
+        
+        Node cur = null;
+        for(int i = 0; i<= max; i++) {
+            if( buckets[i] != null && buckets[i].v == i) {
+                cur = buckets[i];
+            }
+            
+            buckets[i] = cur;
+        }
+        int sum = -1;
+        
+        for(int a : A) {
+            int target = k - a - 1;
+            if(target < min) continue;
+            if(target > max) target = max;
+            if(a == buckets[target].v && buckets[target].f == 1) continue;
+            sum = Math.max(sum, buckets[target].v + a);
+        }
+        return sum;
+    }
+}
+```
