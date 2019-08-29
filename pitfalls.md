@@ -33,5 +33,11 @@ For singed intergers, the right shift may preserve the most significant bit depe
 ```c++
 int charPos[256] {-1}; // initialization only for 0, not for other values
 ```
-
 Range initialization only works for `0`.
+
+## mix type of max()
+```c++
+max(int(tasks.size()), (n + 1) * (maxVal - 1) + maxCount); // for max, we can't mix types.
+```
+
+The return type of `vector::size()` is `size_t`.  
