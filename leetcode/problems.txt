@@ -1,6 +1,16 @@
+1292, immediate-food-delivery-ii, Immediate Food Delivery II
+1291, immediate-food-delivery-i, Immediate Food Delivery I
+1282, number-of-valid-words-for-each-puzzle, Number of Valid Words for Each Puzzle
+1281, can-make-palindrome-from-substring, Can Make Palindrome from Substring
+1280, diet-plan-performance, Diet Plan Performance
+1279, prime-arrangements, Prime Arrangements
 1278, product-price-at-a-given-date, Product Price at a Given Date
+1273, compare-strings-by-frequency-of-the-smallest-character, Compare Strings by Frequency of the Smallest Character
+1272, invalid-transactions, Invalid Transactions
+1270, dinner-plate-stacks, Dinner Plate Stacks
 1269, market-analysis-ii, Market Analysis II
 1268, market-analysis-i, Market Analysis I
+1267, remove-zero-sum-consecutive-nodes-from-linked-list, Remove Zero Sum Consecutive Nodes from Linked List
 1263, number-of-dice-rolls-with-target-sum, Number of Dice Rolls With Target Sum
 1262, online-majority-element-in-subarray, Online Majority Element In Subarray
 1261, swap-for-longest-repeated-character-substring, Swap For Longest Repeated Character Substring
