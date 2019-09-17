@@ -1,5 +1,14 @@
+1301, reformat-department-table, Reformat Department Table
+1300, critical-connections-in-a-network, Critical Connections in a Network
+1299, k-concatenation-maximum-sum, K-Concatenation Maximum Sum
+1298, reverse-substrings-between-each-pair-of-parentheses, Reverse Substrings Between Each Pair of Parentheses
+1297, maximum-number-of-balloons, Maximum Number of Balloons
 1292, immediate-food-delivery-ii, Immediate Food Delivery II
 1291, immediate-food-delivery-i, Immediate Food Delivery I
+1290, make-array-strictly-increasing, Make Array Strictly Increasing
+1289, day-of-the-week, Day of the Week
+1288, maximum-subarray-sum-with-one-deletion, Maximum Subarray Sum with One Deletion
+1287, distance-between-bus-stops, Distance Between Bus Stops
 1282, number-of-valid-words-for-each-puzzle, Number of Valid Words for Each Puzzle
 1281, can-make-palindrome-from-substring, Can Make Palindrome from Substring
 1280, diet-plan-performance, Diet Plan Performance
@@ -42,6 +51,7 @@
 1216, print-zero-even-odd, Print Zero Even Odd
 1215, reported-posts, Reported Posts
 1214, highest-grade-for-each-student, Highest Grade For Each Student
+1209, design-bounded-blocking-queue, Design Bounded Blocking Queue
 1208, maximum-nesting-depth-of-two-valid-parentheses-strings, Maximum Nesting Depth of Two Valid Parentheses Strings
 1207, delete-nodes-and-return-forest, Delete Nodes And Return Forest
 1206, corporate-flight-bookings, Corporate Flight Bookings
@@ -81,6 +91,7 @@
 1155, product-sales-analysis-iii, Product Sales Analysis III
 1154, product-sales-analysis-ii, Product Sales Analysis II
 1153, product-sales-analysis-i, Product Sales Analysis I
+1152, maximum-number-of-ones, Maximum Number of Ones
 1148, adding-two-negabinary-numbers, Adding Two Negabinary Numbers
 1147, flip-columns-for-maximum-number-of-equal-rows, Flip Columns For Maximum Number of Equal Rows
 1146, greatest-common-divisor-of-strings, Greatest Common Divisor of Strings
@@ -92,7 +103,10 @@
 1137, height-checker, Height Checker
 1136, actors-and-directors-who-cooperated-at-least-three-times, Actors and Directors Who Cooperated At Least Three Times
 1135, customers-who-bought-all-products, Customers Who Bought All Products
+1134, shortest-distance-to-target-color, Shortest Distance to Target Color
 1133, last-substring-in-lexicographical-order, Last Substring in Lexicographical Order
+1132, before-and-after-puzzle, Before and After Puzzle
+1131, count-substrings-with-only-one-distinct-letter, Count Substrings with Only One Distinct Letter
 1130, last-stone-weight-ii, Last Stone Weight II
 1129, longest-string-chain, Longest String Chain
 1128, remove-all-adjacent-duplicates-in-string, Remove All Adjacent Duplicates In String
@@ -243,7 +257,7 @@
 977, distinct-subsequences-ii, Distinct Subsequences II
 976, minimum-area-rectangle, Minimum Area Rectangle
 975, range-sum-of-bst, Range Sum of BST
-974, reorder-log-files, Reorder Log Files
+974, reorder-data-in-log-files, Reorder Data in Log Files
 973, stamping-the-sequence, Stamping The Sequence
 972, knight-dialer, Knight Dialer
 971, shortest-bridge, Shortest Bridge
