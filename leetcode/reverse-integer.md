@@ -60,3 +60,39 @@ public:
     }
 };
 ```
+
+### More concise solution
+
+From [https://zxi.mytechroad.com/blog/simulation/leetcode-7-reverse-integer/](Huahua)
+
+It is not necessary to distinguish whether `x` is negative or not. 
+
+The rule to determine the sign of modulus is explained at one [https://stackoverflow.com/questions/7594508/modulo-operator-with-negative-values](article from StackOverFlow).  
+Simple examples are shown below. 
+
+<pre>
+(-7/3) => -2
+-2 * 3 => -6
+so a%b => -1
+
+(7/-3) => -2
+-2 * -3 => 6
+so a%b => 1
+</pre>
+
+```c++
+// Author: Huahua
+class Solution {
+public:
+  int reverse(int x) {
+    int ans = 0;
+    while (x != 0) {
+      int r = x % 10;
+      if (ans > INT_MAX / 10 || ans < INT_MIN / 10) return 0;
+      ans = ans * 10 + r;
+      x /= 10;
+    }
+    return ans;
+  }
+};
+```
