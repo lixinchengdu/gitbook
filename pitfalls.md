@@ -72,3 +72,16 @@ so a%b => -1
 so a%b => 1
 </pre>
 
+## When size() meets minus
+
+The return type of `size()` is `size_t` which is alias of `unsigned int`.  
+If the `size()` minus an `int`, the return type is still `size_t`, which will never be smaller than `0`. 
+
+For example,
+
+```c++
+ for (int i = 0; i < (int) A.size() - 2; ++i)
+```
+
+Without casting, the for loop validation check may not be what the programmer intended.  
+

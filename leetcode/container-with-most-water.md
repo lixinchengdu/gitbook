@@ -50,3 +50,12 @@ public:
     }
 };
 ```
+
+### Proof sketch
+Let's `dp[i][j]` denote the optimal solution if the two axises are between `i` and `j`, inclusive. The induction then should be:
+
+```c++
+dp[i][j] = max((j - i) * min(height[i], height[j]), max(dp[i+1][j], dp[i][j-1]));
+```
+
+The only difference between `dp[i+1][j]` and `dp[i][j-1]` is the ability to use which axis as the boundary. Without losing generality, suppose `height[i] < height[j]`. If the optimal result comes from dp[i][j-1] and `ith` axis is used as the boundary. However, the result is definitely smaller than `(j - i) * min(height[i], height[j])`. 

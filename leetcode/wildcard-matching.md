@@ -79,25 +79,58 @@ p = &quot;a*c?b&quot;
 
 ```c++
 class Solution {
-    public boolean isMatch(String s, String p) {
-        int slen= s.length();
-        int plen= p.length();
-        boolean[][] dp=new boolean[plen+1][slen+1];
-        Arrays.fill(dp[0],false);
-        dp[0][0]=true;
-        for(int i=0;i<plen;++i){
-            dp[i+1][0]=dp[i][0] && p.charAt(i)=='*';
-        }
-        for (int i=0;i<plen;++i){
-            for (int j=0;j<slen;++j){
-                if (p.charAt(i)!='*'){
-                    dp[i+1][j+1]=dp[i][j] && (p.charAt(i)=='?'||p.charAt(i)==s.charAt(j));
-                }else {
-                    dp[i+1][j+1]= dp[i][j]||dp[i][j+1]||dp[i+1][j];
+public:
+    bool isMatch(string s, string p) {
+        int m = s.length();
+        int n = p.length();
+        
+        vector<vector<bool>> dp(m + 1, vector<bool>(n + 1, false));
+        
+        dp[0][0] = true;
+        
+        for (int i = 0; i <= m; ++i) {
+            for (int j = 0; j <= n; ++j) {
+                if (i == 0 && j == 0)   continue;
+                if (j == 0) continue;
+                
+                if (p[j - 1] == '*') {
+                    dp[i][j] = dp[i][j-1];
+                    if (i > 0) {
+                        dp[i][j] = dp[i][j] || dp[i-1][j];
+                    }
+                } else if (i > 0 && (p[j - 1] == '?' || s[i-1] == p[j-1])) {
+                    dp[i][j] = dp[i-1][j-1];
                 }
             }
         }
-        return dp[plen][slen];
+        return dp[m][n];
     }
-}
+};
+```
+
+### More concise DP
+
+It is not necessary to separate the initialization process. 
+
+From [Grandyang] (https://www.cnblogs.com/grandyang/p/4461713.html)
+
+```c++
+class Solution {
+public:
+    bool isMatch(string s, string p) {
+        int m = s.size(), n = p.size();
+        vector<vector<bool>> dp(m + 1, vector<bool>(n + 1, false));
+        dp[0][0] = true;
+        for (int i = 0; i <= m; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                if (j > 1 && p[j - 1] == '*') {
+                    dp[i][j] = dp[i][j - 2] || (i > 0 && (s[i - 1] == p[j - 2] || p[j - 2] == '.') && dp[i - 1][j]);
+                } else {
+                    dp[i][j] = i > 0 && dp[i - 1][j - 1] && (s[i - 1] == p[j - 1] || p[j - 1] == '.');
+                }
+            }
+        }
+        return dp[m][n];
+    }
+};
 ```
