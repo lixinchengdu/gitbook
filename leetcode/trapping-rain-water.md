@@ -57,3 +57,43 @@ public:
     }
 };
 ```
+
+### Another solution with two pointers
+```c++
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        int n = height.size();
+        if (n == 0) return 0;
+        
+        int water = 0;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        
+        int left = 0;
+        int right = n - 1;
+        int boundary = min(height[0], height[n-1]);
+        pq.push({height[0], 0});
+        pq.push({height[n-1], n-1});
+        
+        while (left <= right) {
+            int bar;
+            if (height[left] <= height[right]) {
+                bar = height[left];
+                ++left;
+            } else {
+                bar = height[right];
+                --right;
+            }
+            
+            if (bar < boundary) {
+                water += boundary - bar;
+            } else {
+                boundary = bar;
+            }
+        }
+        
+        return water;
+        
+    }
+};
+```
