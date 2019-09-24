@@ -41,3 +41,47 @@ max(int(tasks.size()), (n + 1) * (maxVal - 1) + maxCount); // for max, we can't 
 ```
 
 The return type of `vector::size()` is `size_t`.  
+
+## usage of STL iterator
+1. Both `prev(it)` and `next(it)` return BidirectionalIterator.  
+However, the signature of `advance` is:
+
+```c++
+void advance (InputIterator& it, Distance n);
+```
+It means that advance return void.
+
+2. Both `it++` and `it--` are valid but `it = it + 1` is not.
+
+3. Be careful about the order of the two parameters of `std::distance`. The first parameter should be the first and the second parameter should be last. 
+
+## abs(x) when x = INT_MIN
+Overflow happens in this situation.
+
+## negative number modulus operation
+The rule to determine the sign of modulus is explained at one [https://stackoverflow.com/questions/7594508/modulo-operator-with-negative-values](article from StackOverFlow).  
+Simple examples are shown below. 
+
+<pre>
+(-7/3) => -2
+-2 * 3 => -6
+so a%b => -1
+
+(7/-3) => -2
+-2 * -3 => 6
+so a%b => 1
+</pre>
+
+## When size() meets minus
+
+The return type of `size()` is `size_t` which is alias of `unsigned int`.  
+If the `size()` minus an `int`, the return type is still `size_t`, which will never be smaller than `0`. 
+
+For example,
+
+```c++
+ for (int i = 0; i < (int) A.size() - 2; ++i)
+```
+
+Without casting, the for loop validation check may not be what the programmer intended.  
+

@@ -1,0 +1,1 @@
+[Decimal To Hex](../leetcode/405)
