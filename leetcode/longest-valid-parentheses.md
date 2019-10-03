@@ -32,6 +32,7 @@
 
 ```c++
 class Solution { //gready method need to consider two scenarios
+                // example "(()"
 public:
     int longestValidParentheses(string s) {
         string reversed = s;
@@ -65,5 +66,55 @@ public:
         return ret;
     }
     
+};
+```
+
+#### More concise solution
+
+Stack solution from [Huahua](https://zxi.mytechroad.com/blog/stack/leetcode-32-longest-valid-parentheses/)
+```c++
+// Author: Huahua
+class Solution {
+public:
+  int longestValidParentheses(string s) {
+    stack<int> q;
+    int start = 0;
+    int ans = 0;
+    for (int i = 0;i < s.length(); i++) {
+      if(s[i] == '(') {
+        q.push(i);
+      } else {
+        if (q.empty()) {
+          start = i + 1;
+        } else {
+          int index = q.top(); q.pop();
+          ans = max(ans, q.empty() ? i - start + 1 : i - q.top());          
+        }
+      }
+    }
+    return ans;
+  }
+};
+```
+
+DP solution from [Xishuashua](http://bangbingsyb.blogspot.com/2014/11/leetcode-longest-valid-parentheses.html)
+
+```c++
+class Solution {
+public:
+    int longestValidParentheses(string s) {
+        int n = s.size(), maxLen = 0;
+        vector<int> dp(n+1,0);
+        for(int i=1; i<=n; i++) {
+            int j = i-2-dp[i-1];
+            if(s[i-1]=='(' || j<0 || s[j]==')') 
+                dp[i] = 0;
+            else {
+                dp[i] = dp[i-1]+2+dp[j];
+                maxLen = max(maxLen, dp[i]);
+            }
+        }
+        return maxLen;
+    }
 };
 ```

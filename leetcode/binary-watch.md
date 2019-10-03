@@ -88,3 +88,31 @@ private:
     
 };
 ```
+
+#### More concise solution
+
+From [Huahua](https://zxi.mytechroad.com/blog/bit/leetcode-401-binary-watch/)
+
+```c++
+// Author: Huahua
+// Running time: 2 ms (beats 100%)
+class Solution {
+public:
+  vector<string> readBinaryWatch(int num) {
+    vector<string> ans;
+    for (int i = 0; i <= num; ++i)
+      for (int h : nums(i, 12))
+        for (int m : nums(num - i, 60))
+          ans.push_back(to_string(h) + (m < 10 ? ":0" : ":") + to_string(m));
+    return ans;
+  }
+private:
+  // Return numbers in [0,r) that has b 1s in their binary format.
+  vector<int> nums(int b, int r) {    
+    vector<int> ans;
+    for (int n = 0; n < r; ++n)
+      if (__builtin_popcount(n) == b) ans.push_back(n);
+    return ans;
+  }  
+};
+```

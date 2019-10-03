@@ -65,7 +65,6 @@ public:
         vector<vector<int>> ret;
         helper(candidates, 0, target, path, ret);
         
-        unique(ret.begin(), ret.end());
         return ret;
     }
     
