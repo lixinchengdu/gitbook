@@ -1,0 +1,52 @@
+# 409. Longest Palindrome
+
+* *Difficulty: Easy*
+
+* *Topics: Hash Table*
+
+* *Similar Questions:*
+
+  * [Palindrome Permutation](palindrome-permutation.md)
+
+## Problem:
+
+<p>Given a string which consists of lowercase or uppercase letters, find the length of the longest palindromes that can be built with those letters.</p>
+
+<p>This is case sensitive, for example <code>"Aa"</code> is not considered a palindrome here.</p>
+
+<p><b>Note:</b><br />
+Assume the length of given string will not exceed 1,010.
+</p>
+
+<p><b>Example: </b>
+<pre>
+Input:
+"abccccdd"
+
+Output:
+7
+
+Explanation:
+One longest palindrome that can be built is "dccaccd", whose length is 7.
+</pre>
+</p>
+## Solutions:
+
+```c++
+class Solution {
+public:
+    int longestPalindrome(string s) {
+        int count = 0;
+        int charCount[256] = {0};
+        for (auto& c : s) {
+            ++charCount[c];
+            if (charCount[c] == 2) {
+                count += 2;
+                charCount[c] = 0;
+            }
+        }
+        
+        return s.length() == count ? count : count + 1;
+    }
+};
+```

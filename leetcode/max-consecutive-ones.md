@@ -1,0 +1,53 @@
+# 485. Max Consecutive Ones
+
+* *Difficulty: Easy*
+
+* *Topics: Array*
+
+* *Similar Questions:*
+
+  * [Max Consecutive Ones II](max-consecutive-ones-ii.md)
+
+  * [Max Consecutive Ones III](max-consecutive-ones-iii.md)
+
+## Problem:
+
+<p>Given a binary array, find the maximum number of consecutive 1s in this array.</p>
+
+<p><b>Example 1:</b><br />
+<pre>
+<b>Input:</b> [1,1,0,1,1,1]
+<b>Output:</b> 3
+<b>Explanation:</b> The first two digits or the last three digits are consecutive 1s.
+    The maximum number of consecutive 1s is 3.
+</pre>
+</p>
+
+<p><b>Note:</b>
+<ul>
+<li>The input array will only contain <code>0</code> and <code>1</code>.</li>
+<li>The length of input array is a positive integer and will not exceed 10,000</li>
+</ul>
+</p>
+## Solutions:
+
+```c++
+class Solution {
+public:
+    int findMaxConsecutiveOnes(vector<int>& nums) {
+        int ret = 0;
+        int count = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] == 1) {
+                ++count;
+            } else {
+                ret = max(ret, count);
+                count = 0;
+            }
+        }
+        
+        ret = max(ret, count);
+        return ret;
+    }
+};
+```

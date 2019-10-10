@@ -1,3 +1,16 @@
+1339, team-scores-in-football-tournament, Team Scores in Football Tournament
+1338, queries-quality-and-percentage, Queries Quality and Percentage
+1337, design-skiplist, Design Skiplist
+1332, count-vowels-permutation, Count Vowels Permutation
+1331, path-with-maximum-gold, Path with Maximum Gold
+1330, longest-arithmetic-subsequence-of-given-difference, Longest Arithmetic Subsequence of Given Difference
+1329, play-with-chips, Play with Chips
+1328, monthly-transactions-ii, Monthly Transactions II
+1327, last-person-to-fit-in-the-elevator, Last Person to Fit in the Elevator
+1322, minimum-moves-to-reach-target-with-rotations, Minimum Moves to Reach Target with Rotations
+1321, get-equal-substrings-within-budget, Get Equal Substrings Within Budget
+1320, remove-all-adjacent-duplicates-in-string-ii, Remove All Adjacent Duplicates in String II
+1319, unique-number-of-occurrences, Unique Number of Occurrences
 1318, tournament-winners, Tournament Winners
 1317, monthly-transactions-i, Monthly Transactions I
 1316, fizz-buzz-multithreaded, Fizz Buzz Multithreaded
@@ -81,6 +94,7 @@
 1181, game-play-analysis-iii, Game Play Analysis III
 1180, game-play-analysis-ii, Game Play Analysis II
 1179, game-play-analysis-i, Game Play Analysis I
+1178, valid-palindrome-iii, Valid Palindrome III
 1174, sales-analysis-iii, Sales Analysis III
 1173, sales-analysis-ii, Sales Analysis II
 1172, sales-analysis-i, Sales Analysis I
@@ -100,6 +114,9 @@
 1154, product-sales-analysis-ii, Product Sales Analysis II
 1153, product-sales-analysis-i, Product Sales Analysis I
 1152, maximum-number-of-ones, Maximum Number of Ones
+1151, stepping-numbers, Stepping Numbers
+1150, two-sum-bsts, Two Sum BSTs
+1149, intersection-of-three-sorted-arrays, Intersection of Three Sorted Arrays
 1148, adding-two-negabinary-numbers, Adding Two Negabinary Numbers
 1147, flip-columns-for-maximum-number-of-equal-rows, Flip Columns For Maximum Number of Equal Rows
 1146, greatest-common-divisor-of-strings, Greatest Common Divisor of Strings
