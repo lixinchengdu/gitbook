@@ -55,6 +55,10 @@ It means that advance return void.
 
 3. Be careful about the order of the two parameters of `std::distance`. The first parameter should be the first and the second parameter should be last. 
 
+4. Be careful about the boundary! `prev(v.begin()) != v.begin()`. The same is true for `next()` and `advance()`. 
+
+5. `prev(v.end())` return the iterator for the last element.
+
 ## abs(x) when x = INT_MIN
 Overflow happens in this situation.
 
@@ -84,4 +88,13 @@ For example,
 ```
 
 Without casting, the for loop validation check may not be what the programmer intended.  
+
+## Binary search of pair
+Sometimes, pairs are stored in one vector in ascending order by the first element. To binary search for lower/upper bound, one articulated entry is needed for searching. Be careful about the value of the second element. The second element should be of the max value. 
+
+```c++
+pair<int, vector<int>> searchEntry = {r, {INT_MAX, INT_MAX, INT_MAX, INT_MAX}}; // super important of the coordinates!
+
+auto it = upper_bound(limits.begin(), limits.end(), searchEntry);
+```
 
