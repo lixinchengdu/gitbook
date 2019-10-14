@@ -59,6 +59,8 @@ It means that advance return void.
 
 5. `prev(v.end())` return the iterator for the last element.
 
+6. `unordered_map<int>::iterator` is not bidirectional. Therefore, `prev(m.end())` is not correct. Both `advance(m.begin(), 1)` and `next(m.begin())` work.
+
 ## abs(x) when x = INT_MIN
 Overflow happens in this situation.
 
